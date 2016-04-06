@@ -6,7 +6,7 @@
 # to `latest`! See
 # https://github.com/phusion/baseimage-docker/blob/master/Changelog.md
 # for a list of version numbers.
-FROM phusion/baseimage:<VERSION>
+FROM phusion/baseimage:latest
 
 # FROM ubuntu:14.04.3
 MAINTAINER Dariel Dato-on <oddrationale@gmail.com>
