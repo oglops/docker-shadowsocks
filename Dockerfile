@@ -6,9 +6,9 @@
 # to `latest`! See
 # https://github.com/phusion/baseimage-docker/blob/master/Changelog.md
 # for a list of version numbers.
-FROM phusion/baseimage:latest
+# FROM phusion/baseimage:latest
 
-# FROM ubuntu:14.04.3
+FROM ubuntu:14.04.3
 MAINTAINER Dariel Dato-on <oddrationale@gmail.com>
 
 # ...put your own build instructions here...
@@ -20,9 +20,10 @@ RUN apt-get update && \
 RUN pip install shadowsocks==2.8.2
 
 # Configure container to run as an executable
-ENTRYPOINT ["/usr/local/bin/ssserver"]
+# ENTRYPOINT ["/usr/local/bin/ssserver"]
+ENTRYPOINT ["ssserver -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb"]
 
 EXPOSE 8080
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
