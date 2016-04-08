@@ -21,7 +21,7 @@ RUN pip install shadowsocks==2.8.2
 
 # Configure container to run as an executable
 # ENTRYPOINT ["/usr/local/bin/ssserver"]
-ENTRYPOINT ["ssserver -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb"]
+ENTRYPOINT ["/usr/local/bin/ssserver -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb"]
 
 EXPOSE 8080
 
